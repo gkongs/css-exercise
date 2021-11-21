@@ -1,55 +1,28 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { Link } from "react-router-dom";
-import { ReactComponent as Search } from "svgs/search.svg";
+import { SearchIcon } from "icons";
+import {
+  NavContainer,
+  MenuContainer,
+  Menu,
+  UtilContainer,
+  Util,
+} from "../css/styleNav";
 
 export default function Nav() {
   return (
-    <div css={NavContainer}>
-      <div css={MenuContainer}>
+    <NavContainer>
+      <MenuContainer>
         {menus.map(menu => (
-          <Link css={Menu} to={menu.to}>
+          <Menu to={menu.to} key={menu.name}>
             {menu.name}
-          </Link>
+          </Menu>
         ))}
-      </div>
-      <div css={UtilContainer}>
-        <Search css={Util} />
-      </div>
-    </div>
+      </MenuContainer>
+      <UtilContainer>
+        <SearchIcon />
+      </UtilContainer>
+    </NavContainer>
   );
 }
-
-const NavContainer = css`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 100px;
-  height: 100px;
-  background-color: white;
-  border-bottom: 1px solid black;
-`;
-
-const MenuContainer = css`
-  color: black;
-  display: flex;
-`;
-
-const Menu = css`
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
-
-  :not(:last-child) {
-    margin-right: 50px;
-  }
-`;
-
-const UtilContainer = css``;
-
-const Util = css`
-  width: 30px;
-`;
 
 // static values
 const menus = [
