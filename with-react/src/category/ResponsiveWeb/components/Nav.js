@@ -5,7 +5,8 @@ import {
   Menu,
   UtilContainer,
   Util,
-} from "../css/styleNav";
+  SearchInput,
+} from "../css/NavStyle";
 
 export default function Nav() {
   return (
@@ -18,7 +19,10 @@ export default function Nav() {
         ))}
       </MenuContainer>
       <UtilContainer>
-        <SearchIcon />
+        <Util>
+          <SearchIcon />
+        </Util>
+        <SearchInput />
       </UtilContainer>
     </NavContainer>
   );

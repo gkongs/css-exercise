@@ -1,13 +1,12 @@
-import styled from "@emotion/styled/macro";
-import { Link } from "react-router-dom";
+import styled from "@emotion/styled";
 
 const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 100px;
+  padding: 0 10rem;
   background-color: ${({ theme }) => theme.colors.primary};
-  height: 100px;
+  height: 10rem;
   border-bottom: 1px solid black;
 `;
 
@@ -15,9 +14,9 @@ const MenuContainer = styled.div`
   display: flex;
 `;
 
-const Menu = styled(Link)`
+const Menu = styled.a`
   color: black;
-  font-size: 20px;
+  font-size: 2rem;
   text-decoration: none;
 
   :not(:last-child) {
@@ -30,11 +29,9 @@ const UtilContainer = styled.div`
 `;
 
 const Util = styled.div`
-  width: 20px;
-
-  :not(:last-child) {
-    margin-right: 2 0px;
-  }
+  margin-right: 10px;
 `;
 
-export { NavContainer, MenuContainer, Menu, UtilContainer, Util };
+const SearchInput = styled.input``;
+
+export { NavContainer, MenuContainer, Menu, UtilContainer, Util, SearchInput };

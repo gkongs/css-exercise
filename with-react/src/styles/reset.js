@@ -122,6 +122,16 @@ const reset = css`
     content: "";
     content: none;
   }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  button,
+  input {
+    outline: none;
+  }
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
