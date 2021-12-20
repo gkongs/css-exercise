@@ -1,20 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import reset from "./reset";
+import { css } from '@emotion/react';
+import reset from './reset';
 
-const breakPoints = [1000, 700];
-const mq = bp => css`
-  @media (max-width: ${bp[0]}px) {
-    html {
-      font-size: 50%;
-    }
-  }
-  @media (max-width: ${bp[1]}px) {
-    html {
-      font-size: 30%;
-    }
-  }
-`;
+const breakPoints = {
+  tablet: 800,
+  moblie: 480,
+};
 
 export const GlobalStyle = css`
   ${reset}
@@ -25,3 +16,19 @@ export const GlobalStyle = css`
 
   ${mq(breakPoints)}
 `;
+
+function mq(bp) {
+  return css`
+    @media screen and (max-width: ${bp.tablet}px) {
+      html {
+        font-size: 50%;
+      }
+    }
+
+    @media screen and (max-width: ${bp.moblie}px) {
+      html {
+        font-size: 30%;
+      }
+    }
+  `;
+}
